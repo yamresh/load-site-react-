@@ -1,7 +1,7 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-const fetchData = async url => {
+const fetchData = async (url) => {
   if (url) {
     const site = `https://${url}`;
     const result = await axios.get(site);
@@ -9,7 +9,7 @@ const fetchData = async url => {
   }
 };
 
-export const getResults = async url => {
+export const getResults = async (url) => {
   const $ = await fetchData(url);
 
   if ($) {
@@ -17,8 +17,8 @@ export const getResults = async url => {
 
     return {
       title: siteName,
-      desc: $("meta[property='og:title']").attr("content"),
-      image: $("meta[property='og:image']").attr("content")
+      desc: $("meta[property='og:description']").attr("content"),
+      image: $("meta[property='og:image']").attr("content"),
     };
   }
 };
