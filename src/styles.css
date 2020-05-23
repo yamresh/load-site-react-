@@ -1,0 +1,17 @@
+.search_results {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-top: 40px;
+  border: 1px solid grey;
+}
+
+.search_results img {
+  display: flex;
+  width: 100%;
+}
+
+.search_results h2,
+.search_results p {
+  padding: 0 16px;
+}
